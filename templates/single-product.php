@@ -48,6 +48,41 @@ if ( $wc_product ) {
 	<div class="cpc-single__page">
 		<div class="cpc-single__box">
 
+			<?php if ( ! empty( $d['table']['rows'] ) ) : ?>
+				<?php
+				$table_rows  = $d['table']['rows'];
+				$table_title = isset( $d['table']['title'] ) ? $d['table']['title'] : '';
+				$table_head  = array_shift( $table_rows );
+				?>
+				<div class="cpc-single__table">
+					<?php if ( '' !== $table_title ) : ?>
+						<h2 class="cpc-section-heading"><?php echo esc_html( $table_title ); ?></h2>
+					<?php endif; ?>
+					<div class="cpc-product-table__scroll">
+						<table class="cpc-product-table">
+							<thead>
+								<tr>
+									<?php foreach ( $table_head as $cell ) : ?>
+										<th scope="col"><?php echo esc_html( $cell ); ?></th>
+									<?php endforeach; ?>
+								</tr>
+							</thead>
+							<?php if ( $table_rows ) : ?>
+								<tbody>
+									<?php foreach ( $table_rows as $cells ) : ?>
+										<tr>
+											<?php foreach ( $cells as $cell ) : ?>
+												<td><?php echo esc_html( $cell ); ?></td>
+											<?php endforeach; ?>
+										</tr>
+									<?php endforeach; ?>
+								</tbody>
+							<?php endif; ?>
+						</table>
+					</div>
+				</div>
+			<?php endif; ?>
+
 			<div class="cpc-single__top">
 
 				<div class="cpc-single__media" data-cpc-gallery data-active-view="<?php echo esc_attr( $first_view ); ?>">
