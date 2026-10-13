@@ -1,0 +1,10 @@
+.cpc-fields .cpc-images{display:flex;gap:24px;flex-wrap:wrap;margin:0 0 16px}
+.cpc-image-picker{margin-top:6px}
+.cpc-image-picker__preview{display:block;margin-bottom:6px}
+.cpc-image-picker__preview img{max-width:90px;height:auto;display:block}
+.cpc-repeater{margin:0 0 16px}
+.cpc-repeater .cpc-rows{margin:6px 0}
+.cpc-row{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.cpc-row__label{width:240px}
+.cpc-row__value{width:320px}
+.cpc-row .cpc-remove-row{color:#b32d2e}
